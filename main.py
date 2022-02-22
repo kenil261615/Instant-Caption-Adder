@@ -13,12 +13,13 @@ Bot = Client(
 CAPTION = os.environ.get("CAPTION", None)
 
 # Better to add caption through config vars / app.json
-
+image = "https://github.com/Sagenerator/Instant-Caption-Adder"
 # Start Message
 @Bot.on_message(filters.command('start') & filters.private)
 async def start(bot, message):
     msg = f"Send any photo,video or any media. Then type your caption\n\n**Channel** - https://t.me/jetbots\n**Our other bots** - https://t.me/jetbots/26\n**Developer/Owner** - https://t.me/jettastic\n**Mirror/Leech/Encoding groups** - https://t.me/jetbots/26"
-    await message.reply_text(msg)
+#     await message.reply_text(msg)
+    await bot.send_photo(message.chat.id,image,caption=msg)
 
 @Bot.on_message(filters.media)
 async def caption(bot, message):
