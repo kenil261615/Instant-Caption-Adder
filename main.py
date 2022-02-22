@@ -13,7 +13,7 @@ Bot = Client(
 CAPTION = os.environ.get("CAPTION", None)
 
 # Better to add caption through config vars / app.json
-image = "https://github.com/Sagenerator/Instant-Caption-Adder"
+image = "https://images4.alphacoders.com/102/thumb-1920-1028306.png"
 # Start Message
 @Bot.on_message(filters.command('start') & filters.private)
 async def start(bot, message):
