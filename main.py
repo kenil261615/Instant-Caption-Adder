@@ -14,6 +14,11 @@ CAPTION = os.environ.get("CAPTION", None)
 
 # Better to add caption through config vars / app.json
 
+# Start Message
+@Bot.on_message(filters.command('start') & filters.private)
+def start(bot, message):
+    msg = f"Send any photo,video or any media. Then type your caption\n\n**Channel** - https://t.me/jetbots\n**Our other bots** - https://t.me/jetbots/26\n**Developer/Owner** - https://t.me/jettastic\n**Mirror/Leech/Encoding groups** - https://t.me/jetbots/26"
+    message.reply_text(msg)
 
 @Bot.on_message(filters.media)
 async def caption(bot, message):
